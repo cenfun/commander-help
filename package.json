@@ -1,0 +1,26 @@
+{
+    "name": "commander-help",
+    "version": "1.0.0",
+    "description": "Styled Help for Commander.js",
+    "main": "./lib/index.js",
+    "scripts": {
+        "test": "node ./test/test.js"
+    },
+    "files": [
+        "lib"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cenfun/commander-help.git"
+    },
+    "dependencies": {
+        "console-grid": "^2.0.1",
+        "eight-colors": "^1.0.2"
+    },
+    "devDependencies": {
+        "commander": "^10.0.0",
+        "eslint": "^8.35.0",
+        "eslint-config-plus": "^1.0.6"
+    }
+}
