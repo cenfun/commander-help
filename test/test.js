@@ -5,7 +5,7 @@ program
     .name('cli-name')
     .description('CLI to some JavaScript string utilities')
     .argument('<username>', 'user to login')
-    .argument('[password]', 'password for user, if required', 'empty')
+    .argument('[password...]', 'password for user, if required', 'empty')
     .option('-t, --title <honorific>', 'title to use before name')
     .option('-d, --debug', 'display some debugging')
     .version('0.8.0', '-v, --version');
@@ -28,7 +28,7 @@ program
 
 program
     .command('start <service>', 'start named service')
-    .command('stop [service]', 'stop named service, or all if no name supplied');
+    .command('stop [service...]', 'stop named service, or all if no name supplied');
 
 // hide default help
 program.helpInformation = function() {
@@ -36,7 +36,6 @@ program.helpInformation = function() {
 };
 // custom help
 program.on('--help', function() {
-    // console.log(program);
     console.log('Usage and help');
     commanderHelp(program);
 });

@@ -15,7 +15,7 @@ program
     .name('cli-name')
     .description('CLI to some JavaScript string utilities')
     .argument('<username>', 'user to login')
-    .argument('[password]', 'password for user, if required', 'empty')
+    .argument('[password...]', 'password for user, if required', 'empty')
     .option('-t, --title <honorific>', 'title to use before name')
     .option('-d, --debug', 'display some debugging')
     .version('0.8.0', '-v, --version');
@@ -38,7 +38,7 @@ program
 
 program
     .command('start <service>', 'start named service')
-    .command('stop [service]', 'stop named service, or all if no name supplied');
+    .command('stop [service...]', 'stop named service, or all if no name supplied');
 
 // hide default help
 program.helpInformation = function() {
@@ -62,7 +62,7 @@ Usage and help
 │ │ ├  -v, --version               │ output the version number                         │       │
 │ │ └  -h, --help                  │ display help for command                          │       │
 │ ├ cli-name <username>            │ user to login                                     │       │
-│ ├ cli-name [password]            │ password for user, if required (default: empty)   │       │
+│ ├ cli-name [password...]         │ password for user, if required (default: empty)   │       │
 ├──────────────────────────────────┼───────────────────────────────────────────────────┼───────┤
 │ ├ cli-name split <string>        │ Split a string into substrings                    │ s     │
 │ │ ├  --first                     │ display just the first substring (default: #)     │       │
@@ -72,12 +72,14 @@ Usage and help
 ├──────────────────────────────────┼───────────────────────────────────────────────────┼───────┤
 │ ├ cli-name start <service>       │ start named service                               │       │
 ├──────────────────────────────────┼───────────────────────────────────────────────────┼───────┤
-│ └ cli-name stop [service]        │ stop named service, or all if no name supplied    │       │
+│ └ cli-name stop [service...]     │ stop named service, or all if no name supplied    │       │
 └──────────────────────────────────┴───────────────────────────────────────────────────┴───────┘
 
 ```
 see [test/test.js](/test/test.js)
 
 ## CHANGELOG
+- 1.0.1
+    - fixed variadic args
 
 - 1.0.0
